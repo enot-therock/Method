@@ -12,28 +12,26 @@ public class Main {
     }
 
     public static boolean leapYear(int year) {
-        boolean leapYear = false;
         if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
-            leapYear = true;
+            return true;
         }
-        return leapYear;
+        return false;
     }
 
-    public static int determinantOS(int clientOS, int currentYear) {
+    public static void determinantOS(int clientOS, int currentYear) {
 
-        if (clientOS == 0 && currentYear < 2024) {
+        if (clientOS == 0 && currentYear < 2015) {
             System.out.println("Установите облегченную версию приложения для IOS");
         }
-        if (clientOS == 1 && currentYear < 2024) {
+        if (clientOS == 1 && currentYear < 2015) {
             System.out.println("Установите облегченную версию приложения для Android");
         }
-        if (clientOS == 0 && currentYear >= 2024) {
+        if (clientOS == 0 && currentYear >= 2015) {
             System.out.println("Установите версию приложения для IOS");
         }
-        if (clientOS == 1 && currentYear >= 2024) {
+        if (clientOS == 1 && currentYear >= 2015) {
             System.out.println("Установите версию приложения для Android");
         }
-        return (0);
     }
 
     public static int calculateDaysDelivery(int distance) {
@@ -54,8 +52,8 @@ public class Main {
     public static void main(String[] args) {
         printTask(0);
 
-        int year = 2010;
-        if (leapYear(year) == true) {
+        int year = 2012;
+        if (leapYear(year)) {
             System.out.println(year + " год - високосный");
         } else {
             System.out.println(year + " год - невисокосный");
@@ -63,8 +61,8 @@ public class Main {
 
         printTask(1);
 
-        int currentYears = LocalDate.now().getYear();
-        determinantOS(1, currentYears);
+        int currentYear = LocalDate.now().getYear();
+        determinantOS(0, currentYear);
 
         printTask(2);
 
