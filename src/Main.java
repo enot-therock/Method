@@ -36,18 +36,15 @@ public class Main {
         return (0);
     }
 
-    public static int calculateDaysDelivery(int distance) {
-        int notDeliveri = 0;
+    public static void calculateDaysDelivery(int distance) {
         if (distance <= 20) {
-            return 1;
-        }
-        if (distance >= 20 && distance <= 60) {
-            return 2;
-        }
-        if (distance >= 60 && distance <= 100) {
-            return 3;
+            System.out.println("Потребуется один день");
+        } else if (distance >= 20 && distance <= 60) {
+            System.out.println("Потребуется 2 дня");
+        } else if (distance >= 60 && distance <= 100) {
+            System.out.println("Потребуется 3 дня");
         } else {
-            return notDeliveri;
+            System.out.println("Доставки нет");
         }
     }
 
@@ -68,11 +65,6 @@ public class Main {
 
         printTask(2);
 
-        int deliveryDays = calculateDaysDelivery(73);
-        if (deliveryDays != 0) {
-            System.out.println("Доставка займет " + deliveryDays + " деня (день)");
-        } else {
-            System.out.println("Доставки нет");
-        }
+        calculateDaysDelivery(25);
     }
 }
